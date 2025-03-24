@@ -1,0 +1,23 @@
+AWS EC2 NAT (Network Address Translation)
+- instancia EC2 configurada para atuar como um NAT Gateway ou NAT Instance.
+- a instancia EC2 NAT permite que recursos em uma sub-rede privada de uma VPC acessem a internet 
+  ou outros recursos da AWS -> ao mesmo tempo, mantendo os recursos privados e não expostos 
+  diretamente à internet – sem precisar de um gateway publico.
+- permite acesso à internet usando 1 único endereço IP Público.
+- traduz os endereços IP privados dos recursos internos para um endereço IP publico na hora de 
+  enviar o tráfego para fora da rede privada.
+
+NAT Gateway
+- é um serviço gerenciado pela AWS, altamente disponível e escalável.
+- não requer gerenciamento de instâncias EC2.
+- oferece maior largura de banda e menor latência em comparação com uma NAT Instance.
+- É a opção recomendada pela AWS para a maioria dos casos de uso
+- recomendado pela AWS devido a sua facilidade, escalabilidade e alta disponibilidade
+
+NAT Instance:
+- É uma instância EC2 configurada manualmente para atuar como um NAT.
+- Requer gerenciamento, como atualizações de software e monitoramento de desempenho.
+- Pode ser personalizada para necessidades específicas, mas é menos escalável e menos tolerante
+  a falhas do que um NAT Gateway
+- atualize a tabela de rotas da sub-rede privada para direcionar o trafego de internet para a 
+  NAT instance
